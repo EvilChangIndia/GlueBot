@@ -1,0 +1,41 @@
+-53
+-14.5
+45
+53.5
+-13.5
+-45
+29.5
+67.5
+-180
+1500
+10
+0.8
+0.5
+-158.5
+-112.5
+90
+
+#the values are in following order:
+
+a1y
+a1z
+a1a
+a2y
+a2z
+a2a
+a3y
+a3z
+a3a
+feedRate
+liftup in mm
+start WaitTime
+normal waitTime
+home Y
+home Z
+home A
+
+
+save the file as config.txt
+**avoid unnecessary spaces and newlines
+**follow the exact order
+

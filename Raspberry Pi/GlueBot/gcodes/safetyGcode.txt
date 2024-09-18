@@ -1,0 +1,6 @@
+G21 ; millimeters
+G90 F2000 ; absolute coordinate
+G94 ; units per minute feed rate mode
+G90 Z100
+G90 Y145
+G0 A0

@@ -1,0 +1,139 @@
+G21 ; millimeters
+G90 ; absolute coordinate
+;G17 ; XY plane
+G94 ; units per minute feed rate mode
+;M3 S1000 ; Turning on spindle
+
+
+;SEQUENCE 1
+;Go to start location
+G90 Z100
+G0 A45 y-62.5 ;set angle A AND Y
+
+;FIND 'a' MANUALLY
+G0 Y-63 z-4.5 ;GO TO FIRST POINT a + liftup
+
+;SWITCH TO INCRIMENTAL
+G91
+
+;start gluing
+;ab
+G1 Y10 Z-10 F1500 ;LIFTDOWN 
+M3 S100 ; Turning on glue
+G4 P0.8 ;initial wait time till glue comes out. manual tuning
+G1 Y4 Z4;pos b - glue_drag (glue coming out after glue off command)
+m5 ; glue off
+G1 Y5 Z5; remaining travel to b
+G1 Y2 Z-1.5  ;dip-off glue
+G1 Y-2 Z1.5  ;dip-off glue
+G1 Y-10 z10 ;liftup
+
+;cd
+G1 Y6.5 Z6.5 ;pos C
+G1 Y10 z-10 ;liftdown
+M3 S100 ; Turning on glue
+G4 P0.5 ;wait time till glue comes out. manual tuning
+G1 Y2.5 Z2.5;pos d
+m5 ; glue off
+G1 Y2 Z2; remaining travel to f3
+G1 Y2 Z-1.5  ;dip-off glue
+G1 Y-2 Z1.5  ;dip-off glue
+G1 Y-10 z10 ;liftup
+
+;MAYBE FIND 'e' MANUALLY, AS WELL
+;efghi
+G1 Y6.5 Z6.5 ;pos e
+G1 Y10 z-10 ;liftdown
+M3 S100 ; Turning on glue
+G4 P0.5 ;wait time till glue comes out. manual tuning
+G1 Y50 Z50;pos f
+G1 Y4 Z4;pos g
+G1 Y5.2 Z2.5;pos h
+G1 Y4.4 Z-1.5;pos i
+G1 Y0.4 Z-0.2;pos j
+m5 ; glue off
+G1 Y3.5 Z-3.5; remaining travel to f3
+G1 Z-1.5  ;dip-off glue
+G1 Z1.5  ;dip-off glue
+G1 Y10 z10 ;liftup
+
+
+
+;SEQUENCE 2
+
+;Go to start location
+G90 Z100
+;set angle A AND Y
+G0 A-45 Y63.5 Z-1.3
+
+;FIND 'a2' USING 'a'
+;GO TO FIRST POINT a2
+G0 Y63.5 Z-3.5 ;pos a2 + liftup
+
+;SWITCH TO INCRIMENTAL
+G91
+
+;START GLUING
+G1 Y-10 z-10 F1500 ;liftdown
+M3 S100 ; Turning on glue
+G4 P0.5 ;wait time till glue comes out. manual tuning
+G1 Y-4 Z4;pos b2
+m5 ; glue off
+G1 Y-5 Z5; remaining travel to c2
+G1 Y-2 Z-1.5  ;dip-off glue
+G1 Y2 Z1.5  ;dip-off glue
+G1 Y10 z10 ;liftup
+
+;cd
+G1 Y-7.5 Z7.5 ;pos C2
+G1 Y-10 z-10 ;liftdown
+M3 S100 ; Turning on glue
+G4 P0.5 ;wait time till glue comes out. manual tuning
+G1 Y-2.5 Z2.5;pos d2
+m5 ; glue off
+G1 Y-2 Z2; remaining travel to f3
+G1 Y-2 Z-1.5  ;dip-off glue
+G1 Y2 Z1.5  ;dip-off glue
+G1 Y10 z10 ;liftup
+
+;efghi
+G1 Y-6.5 Z6.5 ;pos e2
+G1 Y-10 z-10 ;liftdown
+M3 S100 ; Turning on glue
+G4 P0.5 ;wait time till glue comes out. manual tuning
+G1 Y-50 Z50;pos f2
+G1 Y-4 Z2.8;pos g2
+G1 Y-4.8 Z2.7;pos h2
+G1 Y-4.8 Z-2;pos i2
+m5 ; glue off
+G1 Y-3.2 Z-3.2; posj2
+G1 Z-1  ;dip-off glue
+G1 Z1;dip-off glue
+G1 Y-10 z10 ;liftup
+
+;SEQUENCE 3
+;Go to start location
+G90 Y39.5 Z77.5
+;set angle A AND Y
+G0 A-180 y39.5
+
+;FIND 'a' MANUALLY
+;GO TO FIRST POINT a3
+G0 Y39.5 Z77.5 ;pos a3 + liftup
+
+;SWITCH TO INCRIMENTAL
+G91
+
+;start glue
+G1 Y-10 z-10 F1500 ;LIFTDOWN 
+M3 S100 ; Turning on glue
+G4 P0.5 ;wait time till glue comes out. manual tuning
+G1 Y-1.5 Z4;pos b3
+G1 Y-7 Z4.25;pos c3
+G1 Y-41;pos d3 y-39.5-nozzle thickness
+m5 ; glue off
+G1 Y-7 Z-4.25;pos e3
+G1 Y-2 Z-4;pos f3
+G1 Y2  ;shake-off glue
+G1 Y-1 z5 ;liftup
+
