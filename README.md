@@ -73,7 +73,10 @@ To run the program, follow these steps:
      ```
      @reboot /path/to/your/start_clamp.sh
      ```
-##License
+## Contributing
+We welcome contributions! If you have ideas for improvements or new features, please fork the repository and submit a pull request. For any issues, feel free to open an issue in the GitHub tracker.
+
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-This setup allows for easy and efficient control of the robot, streamlining operations on your assembly line. Enjoy using your Gluing Robot!
+Enjoy using your Gluing Robot!
