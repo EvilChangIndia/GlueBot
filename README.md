@@ -13,7 +13,8 @@ The project follows a state machine approach.
 ## Hardware Setup
 - Configuration ZY linear cartesian robot with dispenser at TCP. Additionallz mic clamped along X and rotated about the same axis.
 - Controller : Esp32 NodeMCU (espressif)
-- Firmware : Grbl_Esp32 cnc firmware( original : https://github.com/bdring/Grbl_Esp32  pre-configured: https://github.com/EvilChangIndia/GS_Grbl_Esp32)
+- Original Firmware : Grbl_Esp32 cnc firmware : https://github.com/bdring/Grbl_Esp32
+- Pre-configured : https://github.com/EvilChangIndia/GS_Grbl_Esp32
 - UI : Rpi3B + 7inch Display. Footpedal
 - Glue Dispenser : Loctite dispenser with pedal
 - Linear axes ( x 2) : Nema 17, nema 23 + linear drives (Igus)
