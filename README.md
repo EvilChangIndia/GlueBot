@@ -13,7 +13,7 @@ The project follows a state machine approach.
 ## Hardware Setup
 - Configuration ZY linear cartesian robot with dispenser at TCP. Additionallz mic clamped along X and rotated about the same axis.
 - Controller : Esp32 NodeMCU (espressif)
-- Firmware : Grbl_Esp32 cnc firmware( https://github.com/bdring/Grbl_Esp32 )
+- Firmware : Grbl_Esp32 cnc firmware( original : https://github.com/bdring/Grbl_Esp32  pre-configured: https://github.com/EvilChangIndia/GS_Grbl_Esp32)
 - UI : Rpi3B + 7inch Display. Footpedal
 - Glue Dispenser : Loctite dispenser with pedal
 - Linear axes ( x 2) : Nema 17, nema 23 + linear drives (Igus)
@@ -25,8 +25,15 @@ The project follows a state machine approach.
    ```
    git clone https://github.com/EvilChangIndia/GlueBot.git
    ```
-2. Flashing the Esp32 firmware:
-   I have used **Grbl_Esp32** cnc firmware by **bdring** for the project. Follow the instruction on their repository to flash the firmware onto your Esp32.
+2. Copy (or download) the contents of **Raspberry Pi** folder into your Raspberry Pi's main folder.
+3. Configuring the esp32:
+   You can use the pre configured firmware: https://github.com/EvilChangIndia/GS_Grbl_Esp32
+
+   OR
+
+   configure one from scratch
+
+   - I have used **Grbl_Esp32** cnc firmware by **bdring** for the project. Follow the instruction on their repository to flash the firmware onto your Esp32.
    - Clone the firmware into your PC or download as zip:
      ```
      git clone https://github.com/bdring/Grbl_Esp32.git
@@ -37,9 +44,9 @@ The project follows a state machine approach.
      - Once you have copied the file, you select it by editing the file "Grbl_Esp32/src/Machine.h" to "#include" your file
    - These steps can be understood in detail by refering to the WiKi inside the firmware repository
      - Repository : https://github.com/bdring/Grbl_Esp32
-     - WiKi : https://github.com/bdring/Grbl_Esp32/wiki/Compiling-the-firmware
+4. Complie & Flash configured firmware onto the esp32.
+   Check the wiki from https://github.com/bdring/Grbl_Esp32/wiki/Compiling-with-PlatformIO
 
-3. Copy (or download) the contents of **Raspberry Pi** folder into your Raspberry Pi's main folder.
 
 
 ## Usage
