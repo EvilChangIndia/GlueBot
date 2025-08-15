@@ -11,7 +11,7 @@ The project follows a state machine approach.
 - Contributing
 
 ## Hardware Setup
-- Configuration ZY linear cartesian robot with dispenser at TCP. Additionallz mic clamped along X and rotated about the same axis.
+- Configuration ZY cartesian robot with dispenser at the end-effector. Additionally microphone gets clamped by linear actuated X axis and rotated about the same axis by another actuator.
 - Controller : Esp32 NodeMCU (espressif)
 - Original Firmware : Grbl_Esp32 cnc firmware : https://github.com/bdring/Grbl_Esp32
 - Pre-configured : https://github.com/EvilChangIndia/GS_Grbl_Esp32
